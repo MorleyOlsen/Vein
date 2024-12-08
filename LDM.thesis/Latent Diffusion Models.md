@@ -1,4 +1,4 @@
-# Latent Diffusion Models（LDM）
+# Latent Diffusion Models
 
 High-Resolution Image Synthesis with Latent Diffusion Models
 
