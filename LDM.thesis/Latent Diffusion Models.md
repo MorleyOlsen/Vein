@@ -56,9 +56,9 @@ autoencoder（自编码器）==> 通过 感知损失 + patch-based对抗目标 �
 
 - 解码器 D 从潜在表示中重建图像 x^~，**x^~ = D(z) = D(e(x))**
 
-  x的维度：![73365919187](Latent Diffusion Models.assets/1733659191878.png)
+  x的维度：![73365919187](Latent%20Diffusion%20Models.assets/1733659191878.png)
 
-  z的维度：![73365920008](Latent Diffusion Models.assets/1733659200082.png)
+  z的维度：![73365920008](Latent%20Diffusion%20Models.assets/1733659200082.png)
 
 - 编码器下采样因子 f = H/h = W/w，讨论不同的下采样因子（2的指数倍）
 
@@ -77,7 +77,7 @@ autoencoder（自编码器）==> 通过 感知损失 + patch-based对抗目标 �
 
 目标函数：
 
-![73366015218](Latent Diffusion Models.assets/1733660152180.png)
+![73366015218](Latent%20Diffusion%20Models.assets/1733660152180.png)
 
 > Generative Modeling of Latent Representations
 
@@ -92,11 +92,11 @@ autoencoder（自编码器）==> 通过 感知损失 + patch-based对抗目标 �
 
 目标函数修改为：
 
-![73366069481](Latent Diffusion Models.assets/1733660694814.png)
+![73366069481](Latent%20Diffusion%20Models.assets/1733660694814.png)
 
 神经网络的主干：**time-conditional UNet**
 
-![73366084776](Latent Diffusion Models.assets/1733660847767.png)
+![73366084776](Latent%20Diffusion%20Models.assets/1733660847767.png)
 
 zt 可以在训练期间通过 e 高效地获取
 
@@ -106,25 +106,25 @@ zt 可以在训练期间通过 e 高效地获取
 
 底层 U-Net 主干中加入跨注意力机制
 
-为处理来自各种模态的 y，引入了一个特定领域的编码器 Tθ， 把 y 映射到一个中间表示 Tθ(y)，维度为![73366408712](Latent Diffusion Models.assets/1733664087121.png)
+为处理来自各种模态的 y，引入了一个特定领域的编码器 Tθ， 把 y 映射到一个中间表示 Tθ(y)，维度为![73366408712](Latent%20Diffusion%20Models.assets/1733664087121.png)
 
 跨注意力层的实现：
 
-![73366403840](Latent Diffusion Models.assets/1733664038408.png)
+![73366403840](Latent%20Diffusion%20Models.assets/1733664038408.png)
 
 对于参数的解释：
 
-![73366413861](Latent Diffusion Models.assets/1733664138617.png)
+![73366413861](Latent%20Diffusion%20Models.assets/1733664138617.png)
 
 > framework
 >
 > 通过拼接（concatenation）或更通用的跨注意力机制（cross-attention mechanism）对潜在扩散模型 (LDMs) 进行条件化
 
-![73366423965](Latent Diffusion Models.assets/1733664239657.png)
+![73366423965](Latent%20Diffusion%20Models.assets/1733664239657.png)
 
 基于图像条件对，目标函数修改为：
 
-![73366432250](Latent Diffusion Models.assets/1733664322505.png)
+![73366432250](Latent%20Diffusion%20Models.assets/1733664322505.png)
 
 ## 4：实验
 
